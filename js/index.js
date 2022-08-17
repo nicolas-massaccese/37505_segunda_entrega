@@ -111,27 +111,26 @@ function mostrarYGuardarProductos(){
                 });
                 
                 canastoCarrito.innerHTML +=`<article class="canastoBox" id="id-${productoElegido.id}">
-                <figure class="fotoCanasto">
-                    <img src="${productoElegido.imgSrc}" alt="">
-                </figure>
-                <article class="canastoCaracteristicas">
-                    <div class="marcoSkewCanasto">
-                        <h4 class="modeloCanasto">${productoElegido.modelo}</h4>
+                    <figure class="fotoCanasto">
+                        <img src="${productoElegido.imgSrc}" alt="">
+                    </figure>
+                    <article class="canastoCaracteristicas">
+                        <div class="marcoSkewCanasto">
+                            <h4 class="modeloCanasto">${productoElegido.modelo}</h4>
+                        </div>
+                            <p class="tipoCanasto">${productoElegido.tipo}</p>
+                            <p class="medidaCanasto">${productoElegido.tamanio}</p>
+                        <p class="precio">$ ${productoElegido.precio}</p>
+                    </article>
+                    <div class="contadorCanasto">
+                        <button id="quitar">-<button>
+                        <span class="carritoContador2">1</span>
+                        <button id="agregar">+<button>
                     </div>
-                        <p class="tipoCanasto">${productoElegido.tipo}</p>
-                        <p class="medidaCanasto">${productoElegido.tamanio}</p>
-                    <p class="precio">$ ${productoElegido.precio}</p>
-                </article>
-                <div class="contadorCanasto">
-                    <button id="quitar">-<button>
-                    <span class="carritoContador2">1</span>
-                    <button id="agregar">+<button>
-                </div>
-                <div id="tachoBasura">
-                    <img src="assets/img/tacho_tienda.svg" alt="">
-                </div>
-
-            </article>`
+                    <div id="tachoBasura">
+                        <img src="assets/img/tacho_tienda.svg" alt="">
+                    </div>
+                </article>`
             
                 agregar.addEventListener("click", suma)
                 quitar.addEventListener("click", resta)
@@ -143,7 +142,6 @@ function mostrarYGuardarProductos(){
             function suma (e){
                 contador += 1
                 carritoContador.innerText = contador
-                carritoContador2.innerText = contador
             }
 
             function resta (e){
